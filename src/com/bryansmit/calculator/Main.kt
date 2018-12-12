@@ -10,9 +10,10 @@ class Main {
         @JvmStatic
         fun main(args: Array<String>) {
             val scanner = Scanner(System.`in`)
-            System.out.println("Currently only integer types are supported!")
+
             System.out.println("What kind of calculation do you want to make?")
             System.out.print("(+, -, /, *) : ")
+
             var type = scanner.nextLine()
 
             while (!type.isValidOperator(operators)) {
@@ -23,28 +24,28 @@ class Main {
 
             System.out.print("Enter the first value: ")
 
-            val firstValue = scanner.nextInt()
+            val firstValue = scanner.nextFloat()
 
             when (type) {
                 "+" -> {
                     System.out.print("What do you want to add to $firstValue? ")
-                    val secondValue = scanner.nextInt()
-                    System.out.printf("%n$firstValue + $secondValue = %s%n", (firstValue + secondValue))
+                    val secondValue = scanner.nextFloat()
+                    System.out.println("$firstValue + $secondValue = ${firstValue + secondValue}")
                 }
                 "-" -> {
                     System.out.print("What do you want subtract of $firstValue? ")
-                    val secondValue = scanner.nextInt()
-                    System.out.printf("%n$firstValue + $secondValue = %s%n", (firstValue - secondValue))
+                    val secondValue = scanner.nextFloat()
+                    System.out.println("$firstValue - $secondValue = ${firstValue - secondValue}")
                 }
                 "/" -> {
                     System.out.print("What do you want to divide $firstValue with? ")
-                    val secondValue = scanner.nextInt()
-                    System.out.printf("%n$firstValue / $secondValue = %s%n", (firstValue / secondValue))
+                    val secondValue = scanner.nextFloat()
+                    System.out.println("$firstValue / $secondValue = ${firstValue / secondValue}")
                 }
                 "*" -> {
                     System.out.print("What do you want to multiply $firstValue with? ")
-                    val secondValue = scanner.nextInt()
-                    System.out.printf("%n$firstValue * $secondValue = %s%n", (firstValue * secondValue))
+                    val secondValue = scanner.nextFloat()
+                    System.out.println("$firstValue * $secondValue = ${firstValue * secondValue}")
                 }
             }
         }
